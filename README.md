@@ -76,3 +76,23 @@ First thing take note of is `useState`, this is how we create state. Now let's c
 - **count**: the value in state.
 - **setCount**: this is how you set state. You can name this whatever you want. Its only responsible for updating that piece of state.
 - **useState**: this is the value of initial state
+
+### PrevState
+
+Lets looks at the difference on how to use PrevState.
+
+```javascript
+incrementCount = () => {
+  this.setState(prevState => ({
+    count: prevState.count + 1
+  }));
+};
+```
+
+With **Hooks**
+
+```javascript
+const incrementCount = () => {
+  setCount(prevCount => prevCount + 1);
+};
+```
