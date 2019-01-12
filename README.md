@@ -189,3 +189,58 @@ const App = () => {
 
 export default App;
 ```
+
+## Implementing a Login Form with Multiple State Values
+
+Here we implement user login form with Hooks.
+
+```javascript
+import React, { useState } from "react";
+
+// function declaration instead of arrow function
+export default function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [user, setUser] = useState(null);
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    const userData = {
+      username,
+      password
+    };
+    setUser(userData); // Send form data to state
+  };
+
+  return (
+    <div
+      style={{
+        textAlign: "center"
+      }}
+    >
+      <h2>Login</h2>
+      <form
+        style={{
+          display: "grid",
+          alignItems: "center",
+          justifyItems: "center"
+        }}
+        onSubmit={handleSubmit} // Place the function inline.
+      >
+        <input
+          type="text"
+          placeholder="Username"
+          onChange={event => setUsername(event.target.value)} // Place the function inline.
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          onChange={event => setPassword(event.target.value)} // Place the function inline.
+        />
+        <button type="submit">Submit</button>
+      </form>
+      {user && JSON.stringify(user, null, 2)}
+    </div>
+  );
+}
+```
