@@ -320,3 +320,7 @@ export default function Register() {
   );
 }
 ```
+
+# Summary
+
+I found that `useState` / Hooks in my opinion is much more flexible than only using state in class-based components. Having the option to declare individual pieces of state or use an object for state as well have state in functional components is great. I also find that the code is cleaner and more readable. Rather than write `this.state.form.username` or destructuring, we can simply write `form.username` when using Hooks. As a new developer, I don't yet have many strong opinions, but I'm sure that will change as my knowledge and skill level grows. I did find that the concept of React Hooks was easy to grasp. My next task is to learn how to do Data Fetching with Hooks / Replacing Class Lifecycle Methods (useEffect, useRef). The repo to that learning process can be found [here](#).
